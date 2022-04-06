@@ -1,4 +1,4 @@
-{% assign free_gift_over_price_40 = 6600 %} 
+{% assign free_gift_threshold = 6600 %} 
 {% assign variant_id = '6978332459042' %}
 
   <script>
@@ -19,7 +19,7 @@
       cartUpdates = { {{ variant_id }}: 0 }
     }
     
-    else if ( ( cartItems.length >= 1 ) && ( qtyInTheCart !== 1 ) && (cartTotal >= {{ free_gift_over_price_30 }} ) ) {
+    else if ( ( cartItems.length >= 1 ) && ( qtyInTheCart !== 1 ) && (cartTotal >= {{ free_gift_threshold }} ) ) {
       cartUpdates = { {{ variant_id }}: 1 }
     }
 
@@ -27,7 +27,7 @@
       return;
     }
 
-    var params = {
+    {% comment %} var params = {
       type: 'POST',
       url: '/assets/cart.js',
       data: { updateQuantity: cartUpdates },
@@ -35,7 +35,21 @@
       success: function(stuff) { 
         window.location.href = '/cart';
       }
-    };
-    $.ajax(params);
-  })(jQuery);
+    }; {% endcomment %}
+
+    data = {
+      "id": variant_id,
+      "quantity": 1
+    }
+
+    jQuery.ajax({
+      type: 'POST',
+      url: '/cart/add.js',
+      data: data,
+      dataType: 'json',
+      success: function() { 
+        window.location.href = '/cart'; 
+      }
+    });
+    window.location = '/checkout';
   </script>
