@@ -1,4 +1,4 @@
-{% assign free_gift_over_price_40 = 4000 %} 
+{% assign free_gift_over_price_40 = 6600 %} 
 {% assign variant_id = '6978332459042' %}
 
   <script>
@@ -29,8 +29,8 @@
 
     var params = {
       type: 'POST',
-      url: '/cart/update.js',
-      data: { updates: cartUpdates },
+      url: '/assets/cart.js',
+      data: { updateQuantity: cartUpdates },
       dataType: 'json',
       success: function(stuff) { 
         window.location.href = '/cart';
