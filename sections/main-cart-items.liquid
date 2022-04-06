@@ -19,7 +19,35 @@
   }
 {%- endstyle -%}
 
-{% render 'free-gift-inject' %}
+{% comment %} {% render 'free-gift-inject' %} {% endcomment %}
+
+<script>
+  let formData = {
+    'items': [{
+     'id': 6978332459042,
+     'quantity': 1
+    }]
+  };
+
+  jQuery.getJSON('/cart.js', function(cart) {
+  if (cart.total_price >= 500000 )
+  {
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+  } );
+</script>
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
