@@ -37,7 +37,7 @@
       }
     }; {% endcomment %}
 
-    data = {
+    {% comment %} data = {
       "id": variant_id,
       "quantity": 1
     }
@@ -51,5 +51,28 @@
         window.location.href = '/cart'; 
       }
     });
-    window.location = '/checkout';
+    window.location = '/checkout'; {% endcomment %}
+
+    let formData = {
+      'items': [{
+       'id': 36110175633573,
+       'quantity': 2
+      }]
+    };
+    
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+    
+  })
   </script>
