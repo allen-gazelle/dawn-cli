@@ -55,11 +55,11 @@
     console.log("hi..");
   });
   $(document).on('cart.requestComplete', function(event, cart) {
+    console.log("hello there");
     if (cart.total_price >= 5000 )
     {
       CartJS.addItem(6978332459042);
     }
-    console.log("hello there");
   });
 </script>
 
