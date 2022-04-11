@@ -17,7 +17,7 @@
     {%- endunless -%}
 
     {% comment %} {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }} {% endcomment %}
-    <script src="{{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | asset_url }}" defer></script>
+    {% comment %} <script src="{{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | asset_url }}" defer></script> {% endcomment %}
 
     <title>
       {{ page_title }}
