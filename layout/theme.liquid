@@ -17,7 +17,7 @@
     {%- endunless -%}
 
     {% comment %} {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }} {% endcomment %}
-    <script src="{{ 'https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/cart.min.js' | asset_url }}" defer></script>
+    <link rel="preload" href="{{ 'cart.min.js' | asset_url }}" as="script">
 
     <title>
       {{ page_title }}
