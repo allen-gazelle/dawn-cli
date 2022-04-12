@@ -48,11 +48,10 @@
   });
   {% endcomment %}
 
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart.min.js' | asset_url }}" defer="defer"></script>
+{% comment %} <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart.min.js' | asset_url }}" defer="defer"></script> {% endcomment %}
   
 <script>
-  //console.log("hi..");
   $(document).on('cart.requestComplete', function(event, cart) {
     console.log("hello there");
     if (cart.total_price >= 5000 )

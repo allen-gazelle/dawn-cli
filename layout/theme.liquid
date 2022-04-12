@@ -16,8 +16,9 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    {% comment %} {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }} {% endcomment %}
-    <link rel="preload" href="{{ 'cart.min.js' | asset_url }}" as="script">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/cart.min.js" defer></script>
+    {% comment %} <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/1.1.0/cart.min.js" as="script"> {% endcomment %}
 
     <title>
       {{ page_title }}
