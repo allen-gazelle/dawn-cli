@@ -50,16 +50,6 @@
 
 {% comment %} <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart.min.js' | asset_url }}" defer="defer"></script> {% endcomment %}
-  
-<script>
-  $(document).on('cart.requestComplete', function(event, cart) {
-    console.log("hello there");
-    if (cart.total_price >= 5000 )
-    {
-      CartJS.addItem(6978332459042);
-    }
-  });
-</script>
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
