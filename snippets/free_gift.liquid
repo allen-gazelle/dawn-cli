@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+jQuery_1_1_3(document).on('cart.requestComplete', function(event, cart) {
+    
+    if(cart.total_price >= 5000)
+    {
+        CartJS.addItem(6978332459042);
+    }
+    else
+    {
+        CartJS.removeItemById(6978332459042);
+    }
+}
+
+</script>
