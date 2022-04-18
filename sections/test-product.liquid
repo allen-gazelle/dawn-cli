@@ -1,7 +1,7 @@
 <div style="text-align: center">
 <h2>{{ product.title }}</h2>
 
-<img src="{{ product.featured_image | image_url: width: 400 }}" />
+<img src="{{ product.featured_image | image_url: width: 400 }}" width="auto" height="auto" loading="lazy">
 
 <h4>{{ section.settings.tax_notice }}</h4>
 
