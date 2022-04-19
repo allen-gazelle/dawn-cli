@@ -17,7 +17,7 @@
     {%- endunless -%}
 
     {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' | script_tag }}
-    {{ 'cart.min.js' | asset_url | script_tag }}
+    {{ 'rivet-cart.min.js' | asset_url | script_tag }}
     <script type="text/javascript">
       jQuery(function() {
         CartJS.init({{ cart | json }}, {
