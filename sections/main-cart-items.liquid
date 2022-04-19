@@ -19,6 +19,7 @@
   }
 {%- endstyle -%}
 
+{% render 'custom_scripts' %}
 {% render 'free_gift' %}
 
   {% comment %}
@@ -47,9 +48,6 @@
     }
   });
   {% endcomment %}
-
-{% comment %} <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart.min.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
