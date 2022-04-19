@@ -21,32 +21,34 @@
 
 {% render 'free_gift' %}
 
-  {% comment %}
-  let formData = {
-    'items': [{
-     'id': 6978332459042,
-     'quantity': 1
-    }]
-  };
-  jQuery.getJSON('/cart.js', function(cart) {
-    if (cart.total_price >= 50 )
-    {
-      fetch(window.Shopify.routes.root + 'cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => {
-        return response.json();
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
-  });
-  {% endcomment %}
+{% comment %}
+let formData = {
+  'items': [{
+    'id': 6978332459042,
+    'quantity': 1
+  }]
+};
+jQuery.getJSON('/cart.js', function(cart) {
+  if (cart.total_price >= 50 )
+  {
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+});
+{% endcomment %}
+
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
