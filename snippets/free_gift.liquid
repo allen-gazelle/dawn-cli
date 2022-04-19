@@ -1,14 +1,8 @@
 <script type="text/javascript">
-    jQuery(function() {
-        CartJS.init({{ cart | json }}, {
-            "dataAPI": false,
-            "requestBodyClass": "loading"
-        });
-    });
 
     $(document).on('cart.requestComplete', function(event, cart) {
         var variant_id = 6978332459042;
-        if(cart.total_price >= 5)
+        if(cart.total_price >= 5000)
         {
             CartJS.addItem(variant_id);
         }
