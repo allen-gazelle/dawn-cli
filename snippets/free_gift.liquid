@@ -7,16 +7,15 @@
     });
 
     $(document).on('cart.requestComplete', function(event, cart) {
-    var variant_id = 6978332459042;
-
-    if(cart.total_price >= 5000)
-    {
-        CartJS.addItem(variant_id);
-    }
-    else
-    {
-        CartJS.removeItemById(variant_id);
-    }
-});
+        var variant_id = 6978332459042;
+        if(cart.total_price >= 5)
+        {
+            CartJS.addItem(variant_id);
+        }
+        else
+        {
+            CartJS.removeItemById(variant_id);
+        }
+    });
 
 </script>
